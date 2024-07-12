@@ -3,10 +3,15 @@
 
 #include <cppconn/connection.h>
 
-class IDataBaseOperation {
+// Interface para operacoes com o banco de dados
+class IDataBaseOperation
+{
 public:
+    // Construtor e destrutor
     virtual ~IDataBaseOperation() {}
-    virtual void execute(sql::Connection* con) = 0;
+
+    // Executa a operacao no banco de dados
+    virtual void execute(sql::Connection *con) = 0;
 };
 
-#endif // IDATABASEOPERATION_H
+#endif

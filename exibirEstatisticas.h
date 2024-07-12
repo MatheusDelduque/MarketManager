@@ -3,9 +3,12 @@
 
 #include "iDataBaseOperation.h"
 
-class ExibirEstatisticas : public IDataBaseOperation {
+// Classe para exibir estatisticas dos produtos, implementando a interface IDatabaseOperation
+class ExibirEstatisticas : public IDataBaseOperation
+{
 public:
-    void execute(sql::Connection* con) override;
+    // Metodo que executa a exibicao de estatisticas
+    void execute(sql::Connection *con) override;
 };
 
-#endif // EXIBIRESTATISTICAS_H
+#endif 

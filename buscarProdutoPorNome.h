@@ -3,9 +3,12 @@
 
 #include "iDataBaseOperation.h"
 
-class BuscarProdutoPorNome : public IDataBaseOperation {
+// Classe para buscar um produto pelo nome, implementando a interface IDatabaseOperation
+class BuscarProdutoPorNome : public IDataBaseOperation
+{
 public:
-    void execute(sql::Connection* con) override;
+    // Metodo que executa a busca de produtos por nome
+    void execute(sql::Connection *con) override;
 };
 
-#endif // BUSCARPRODUTOPORNOME_H
+#endif

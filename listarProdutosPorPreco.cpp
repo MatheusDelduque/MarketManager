@@ -1,21 +1,24 @@
-#include "buscarProdutoPorNome.h"
+#include "listarProdutosPorPreco.h"
 #include <cppconn/prepared_statement.h>
 #include <cppconn/resultset.h>
 #include <iostream>
 
-// Metodo que executa a busca de produtos por nome
-void BuscarProdutoPorNome::execute(sql::Connection *con)
+// Metodo que executa a listagem de produtos por faixa de preco
+void ListarProdutosPorPreco::execute(sql::Connection *con)
 {
-    std::string nome;
+    double precoMin, precoMax;
     std::cout << std::endl;
-    std::cout << "Digite o nome do produto: ";
-    std::cin >> nome;
+    std::cout << "Digite o preço mínimo: ";
+    std::cin >> precoMin;
+    std::cout << "Digite o preço máximo: ";
+    std::cin >> precoMax;
 
-    // Prepara a declaracao SQL para buscar produtos pelo nome
-    sql::PreparedStatement *pstmt = con->prepareStatement("SELECT * FROM produtos WHERE nome LIKE ?");
+    // Prepara a declaracao SQL para buscar produtos dentro da faixa de preco
+    sql::PreparedStatement *pstmt = con->prepareStatement("SELECT * FROM produtos WHERE preco BETWEEN ? AND ?");
 
-    // Define o parametro da declaracao preparada
-    pstmt->setString(1, "%" + nome + "%");
+    // Define os parametros da declaracao preparada
+    pstmt->setDouble(1, precoMin);
+    pstmt->setDouble(2, precoMax);
 
     // Executa a consulta e obtem o resultado
     sql::ResultSet *res = pstmt->executeQuery();
@@ -24,7 +27,7 @@ void BuscarProdutoPorNome::execute(sql::Connection *con)
     if (!res->next())
     {
         std::cout << std::endl;
-        std::cout << "Nenhum produto encontrado com o nome especificado." << std::endl;
+        std::cout << "Nao ha produtos dentro da faixa de preco especificada." << std::endl;
         std::cout << std::endl;
     }
     else

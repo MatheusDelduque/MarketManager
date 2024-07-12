@@ -3,9 +3,12 @@
 
 #include "iDataBaseOperation.h"
 
-class AdicionarProduto : public IDataBaseOperation {
+// Classe para adicionar um novo produto, implementando a interface IDatabaseOperation
+class AdicionarProduto : public IDataBaseOperation
+{
 public:
-    void execute(sql::Connection* con) override;
+    // Metodo que executa a adicao de um novo produto
+    void execute(sql::Connection *con) override;
 };
 
-#endif // ADICIONARPRODUTO_H
+#endif

@@ -3,9 +3,12 @@
 
 #include "iDataBaseOperation.h"
 
-class ListarProdutos : public IDataBaseOperation {
+// Classe para listar todos os produtos, implementando a interface IDatabaseOperation
+class ListarProdutos : public IDataBaseOperation
+{
 public:
-    void execute(sql::Connection* con) override;
+    // Metodo que executa a listagem de produtos
+    void execute(sql::Connection *con) override;
 };
 
-#endif // LISTARPRODUTOS_H
+#endif
