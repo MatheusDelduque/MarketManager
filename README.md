@@ -5,12 +5,14 @@ Este programa em C++ apresenta o gerenciamento de produtos utilizando o banco de
 ## Instalacao Banco de Dados MySQL
 
 **Instalar o MySQL** - **Linux (Ubuntu/Debian)**:
-`bash
+
+```bash
 sudo apt update
 sudo apt install mysql-server
 sudo systemctl start mysql
 sudo systemctl enable mysql
-`
+```
+
 2. **Configurar MySQL**
    - Após a instalação, você pode configurar a senha do usuário root:
      ```bash
