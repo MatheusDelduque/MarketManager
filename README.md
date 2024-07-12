@@ -42,9 +42,10 @@ Para compilar o programa, siga os passos abaixo:
 
 Para utilizar o programa, siga os passos abaixo:
 
-1. Apos compilar o programa com sucesso, execute-o no terminal, utilizando o comando `./executaveis/dados`.
-2. Um menu sera aberto para escolha da analise desejada
-3. Verifique a saida no terminal para visualizar os resultados da analise.
+1. Apos compilar o programa com sucesso, execute o script de configuração do banco de dados: `./executaveis/setupDataBase`
+2. Em seguida, execute o programa principal: `./executaveis/dados`
+3. Um menu sera aberto para escolha da analise desejada
+4. Verifique a saida no terminal para visualizar os resultados da analise.
 
 ## Ajustes e Personalização
 
